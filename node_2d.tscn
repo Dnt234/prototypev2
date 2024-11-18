@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://5ieamiefieo5"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_xyjv8"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8y1yy"]
+
+[sub_resource type="Theme" id="Theme_qla2q"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_xyjv8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -3.0
+offset_right = 197.0
+offset_bottom = 40.0
+scale = Vector2(5.7041, 4.77769)
+texture = SubResource("CanvasTexture_8y1yy")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
+layout_mode = 0
+offset_left = 1.22719
+offset_top = 9.20947
+offset_right = 24.2272
+offset_bottom = 49.2095
+theme = SubResource("Theme_qla2q")
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 3.0
+offset_top = 265.0
+offset_right = 68.0
+offset_bottom = 301.0
+rotation = 3.13702
+scale = Vector2(-25.3147, -9.13644)
+theme_override_font_sizes/font_size = 20
+text = "cost:1"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
